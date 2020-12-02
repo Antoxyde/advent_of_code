@@ -6,10 +6,12 @@ fn part1(entries: &[PasswordEntry]) -> usize {
     let mut result = 0;
 
     for entry in entries {
+
         let count = entry.password.
             chars()
             .filter(|x| *x == entry.letter)
             .count();
+
         if count >= entry.min && count <= entry.max {
             result += 1;
         }
@@ -51,7 +53,7 @@ fn main() -> std::io::Result<()> {
 
     for line in inp[..inp.len()-1].split("\n") {
         let mut entry = PasswordEntry::default();
-        let parts: Vec<&str> = line.split(" ").collect();
+        let parts: Vec<&str> = line.split_whitespace().collect();
         let minmax: Vec<&str> = parts[0].split("-").collect();
         entry.min = minmax[0].parse::<usize>().expect("parsing failed");
         entry.max = minmax[1].parse::<usize>().expect("parsing failed");
