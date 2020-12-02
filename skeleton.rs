@@ -23,7 +23,7 @@ fn main() -> std::io::Result<()> {
     println!("PART1 : {}", r1);
 
     //let r2 = part2();
-    //println!("PART2 : {}", r1);
+    //println!("PART2 : {}", r2);
     Ok(())
 
 }
