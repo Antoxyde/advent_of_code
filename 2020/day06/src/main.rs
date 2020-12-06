@@ -19,11 +19,7 @@ fn part2(ans: &[&str]) -> usize {
              s.chars()
             .unique()
             .filter(|x| *x != '\n')
-            .filter(|c| s.chars()
-                        .filter(|c2| c2 == c)
-                        .count() == s.chars()
-                                    .filter(|c2| *c2 == '\n')
-                                    .count() + 1)
+            .filter(|c| s.matches(*c).count() == s.matches('\n').count() + 1)
             .count())
         .sum()
 }
