@@ -2,14 +2,9 @@ use std::fs::File;
 use std::io::prelude::*;
 
 
-fn part1(nums: &[u32]) -> u32 {
+fn part1(nums: &[u32]) -> usize {
     0
 }
-
-fn part2(nums: &[u32]) -> u32 {
-    0
-}
-
 
 fn main() -> std::io::Result<()> {
 
