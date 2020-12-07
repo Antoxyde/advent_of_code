@@ -58,11 +58,7 @@ fn main() -> std::io::Result<()> {
     let mut inp = String::new();
     file.read_to_string(&mut inp)?;
 
-    let mut rules: Rules = HashMap::new();
-
-    for (s,v) in inp[..inp.len()- 1].split("\n").map(|l| parse_line(l)) {
-        rules.insert(s,v);
-    }
+    let rules: Rules = inp[..inp.len()- 1].split("\n").map(|l| parse_line(l)).collect();
 
     let r1 = part1(&rules);
     println!("PART1 : {}", r1);
