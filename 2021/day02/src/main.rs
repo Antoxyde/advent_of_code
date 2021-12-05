@@ -48,7 +48,7 @@ fn main() -> std::io::Result<()> {
     let mut inp = String::new();
     file.read_to_string(&mut inp)?;
 
-    let entries: Vec<Entry> = inp[..inp.len()- 1].split("\n").map(|l| parse_line(l)).collect();
+    let entries: Vec<Entry> = inp.lines().map(|l| parse_line(l)).collect();
 
     let r1 = part1(&entries);
     println!("PART1 : {}", r1);
